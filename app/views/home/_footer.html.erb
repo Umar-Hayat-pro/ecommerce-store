@@ -1,0 +1,46 @@
+<footer class="bg-dark text-white py-5 mt-5">
+  <div class="container">
+    <div class="row">
+      <!-- About Section -->
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <p class="small">
+          Welcome to our website. We're dedicated to providing you with the best service possible. Stay connected and explore more.
+        </p>
+      </div>
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><%= link_to 'Home', root_path, class: "text-white text-decoration-none" %></li>
+          <li><%= link_to 'About', about_path, class: "text-white text-decoration-none" %></li>
+          <li><%= link_to 'Contact Us', contact_path, class: "text-white text-decoration-none" %></li>
+          <li><%= link_to 'Privacy Policy', '#', class: "text-white text-decoration-none" %></li>
+        </ul>
+      </div>
+      <!-- Social Media -->
+      <div class="col-md-4">
+        <h5>Follow Us</h5>
+        <div class="d-flex">
+          <%= link_to '#', class: "text-white me-3", title: "Facebook" do %>
+            <i class="fa-brands fa-facebook fa-lg"></i>
+          <% end %>
+          <%= link_to '#', class: "text-white me-3", title: "Twitter" do %>
+            <i class="fa-brands fa-twitter fa-lg"></i>
+          <% end %>
+          <%= link_to '#', class: "text-white me-3", title: "Instagram" do %>
+            <i class="fa-brands fa-instagram fa-lg"></i>
+          <% end %>
+          <%= link_to '#', class: "text-white", title: "LinkedIn" do %>
+            <i class="fa-brands fa-linkedin fa-lg"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <hr class="text-white my-3" />
+    <!-- Copyright -->
+    <div class="text-center">
+      <p class="mb-0 small">&copy; <%= Date.today.year %> MyWebsite. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
