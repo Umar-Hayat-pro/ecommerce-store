@@ -1,0 +1,126 @@
+<div class="sidebar bg-dark text-white">
+  <div class="sidebar-header text-center py-3">
+    <%= image_tag 'logo.webp', class: 'img-fluid', style: "height:30px; width:auto;" %>
+  </div>
+  <ul class="nav flex-column">
+    <% nav_items = [
+      { title: 'Dashboard', icon: 'fas fa-tachometer-alt', href: '#' },
+      { title: 'Products', icon: 'fas fa-cogs', href: '#' },
+      { title: 'Categories', icon: 'fas fa-th-large', href: '#' },
+      { title: 'Orders', icon: 'fas fa-box', href: '#' },
+      { title: 'Users', icon: 'fas fa-users', href: '#' }
+    ] %>
+    <% nav_items.each do |item| %>
+      <li class="nav-item text-center">
+        <a class="nav-link text-white" href="<%= item[:href] %>" data-bs-toggle="tooltip" data-bs-placement="right" title="<%= item[:title] %>">
+          <i class="<%= item[:icon] %>"></i>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+  <!-- Logout Button -->
+  <div class="logout-container text-center mt-auto mb-3">
+    <a href="#" class="logout-btn" data-bs-toggle="tooltip" data-bs-placement="right" title="Log Out">
+      <i class="fas fa-sign-out-alt"></i>
+    </a>
+  </div>
+</div>
+<style>
+  /* Updated sidebar styles with animations */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px; /* Narrower sidebar */
+    height: 100%;
+    background-color: #343a40;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar-header img {
+    max-height: 30px;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-header img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .sidebar .nav-item {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .sidebar .nav-link {
+    font-size: 18px; /* Smaller icon size */
+    color: #ddd;
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s ease;
+  }
+
+  .sidebar .nav-link i {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .sidebar .nav-link:hover {
+    background-color: #495057;
+    color: #fff;
+    transform: translateY(-5px); /* Subtle bounce effect */
+  }
+
+  .sidebar .nav-link:hover i {
+    color: #007bff;
+    transform: rotate(15deg); /* Rotate icons slightly on hover */
+  }
+
+  .logout-container {
+    margin-top: auto;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logout-btn {
+    font-size: 18px; /* Smaller icon size */
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease, transform 0.3s ease;
+  }
+
+  .logout-btn:hover {
+    background-color: #007bff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px); /* Subtle bounce on hover */
+  }
+
+  body {
+    margin-left: 70px; /* Adjust based on the sidebar width */
+    transition: margin-left 0.3s ease;
+  }
+</style>
+<script>
+  // Initialize Bootstrap tooltips with smooth animation
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl, {
+      animation: true,
+    });
+  });
+</script>
