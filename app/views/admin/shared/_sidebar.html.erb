@@ -1,6 +1,6 @@
 <div class="sidebar bg-dark text-white">
   <div class="sidebar-header text-center py-3">
-    <%= image_tag 'logo.webp', class: 'img-fluid', style:"height:40px; width:auto;" %>
+    <%= image_tag 'logo.webp', class: 'img-fluid', style: "height:30px; width:auto;" %>
   </div>
   <ul class="nav flex-column">
     <% nav_items = [
@@ -11,7 +11,7 @@
       { title: 'Users', icon: 'fas fa-users', href: '#' }
     ] %>
     <% nav_items.each do |item| %>
-      <li class="nav-item">
+      <li class="nav-item text-center">
         <a class="nav-link text-white" href="<%= item[:href] %>" data-bs-toggle="tooltip" data-bs-placement="right" title="<%= item[:title] %>">
           <i class="<%= item[:icon] %>"></i>
         </a>
@@ -26,116 +26,101 @@
   </div>
 </div>
 <style>
-  /* Custom sidebar styles */
+  /* Updated sidebar styles with animations */
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
+    width: 70px; /* Narrower sidebar */
     height: 100%;
     background-color: #343a40;
-    padding-top: 30px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: all 0.3s ease;
   }
 
-  .sidebar-header h3 {
-    font-size: 24px;
-    color: #fff;
-    font-weight: 600;
-    margin: 0;
+  .sidebar-header img {
+    max-height: 30px;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-header img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
   }
 
   .sidebar ul {
     list-style-type: none;
-    padding-left: 0;
-  }
-
-  .sidebar .nav-item {
+    padding: 0;
+    margin: 0;
     width: 100%;
   }
 
+  .sidebar .nav-item {
+    text-align: center;
+    margin: 10px 0;
+  }
+
   .sidebar .nav-link {
-    display: block;
-    padding: 15px 20px;
-    font-size: 18px;
+    font-size: 18px; /* Smaller icon size */
     color: #ddd;
-    text-decoration: none;
-    border-left: 4px solid transparent;
-    transition: background-color 0.3s, border-left 0.3s;
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s ease;
+  }
+
+  .sidebar .nav-link i {
+    transition: transform 0.3s ease, color 0.3s ease;
   }
 
   .sidebar .nav-link:hover {
     background-color: #495057;
-    border-left: 4px solid #007bff;
     color: #fff;
+    transform: translateY(-5px); /* Subtle bounce effect */
   }
 
-  .sidebar .nav-link i {
-    margin-right: 10px;
+  .sidebar .nav-link:hover i {
+    color: #007bff;
+    transform: rotate(15deg); /* Rotate icons slightly on hover */
   }
 
   .logout-container {
-    padding: 20px;
+    margin-top: auto;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
   }
 
   .logout-btn {
-    display: inline-block;
-    font-size: 18px;
+    font-size: 18px; /* Smaller icon size */
     color: white;
     background-color: black;
-    border-radius: 50px;
+    padding: 10px;
+    border-radius: 50%;
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  }
-
-  .logout-btn i {
-    margin-right: 8px;
+    transition: all 0.3s ease, transform 0.3s ease;
   }
 
   .logout-btn:hover {
+    background-color: #007bff;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-    transform: translateX(5px);
+    transform: translateY(-5px); /* Subtle bounce on hover */
   }
 
   body {
-    margin-left: 250px; /* Sidebar width */
+    margin-left: 70px; /* Adjust based on the sidebar width */
     transition: margin-left 0.3s ease;
   }
-
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 200px;
-    }
-
-    body {
-      margin-left: 200px;
-    }
-  }
-
-  /* For small screens, make the sidebar collapsible */
-  @media (max-width: 576px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-
-    body {
-      margin-left: 0;
-    }
-
-    .sidebar .nav-link {
-      font-size: 16px;
-    }
-  }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script>
-  // Initialize Bootstrap tooltips
+  // Initialize Bootstrap tooltips with smooth animation
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
+    return new bootstrap.Tooltip(tooltipTriggerEl, {
+      animation: true,
+    });
   });
 </script>
