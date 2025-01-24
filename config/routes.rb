@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
   get "store" => "store#index"
-  get "about" => "home#about"
-  get "contact" => "home#contact"
+  get "about" => "about#index"
+  get "contact" => "contact#index"
   root "home#index"
 end
