@@ -38,3 +38,5 @@ end
 
 gem "devise", "~> 4.9"
 gem "rspec-rails", "~> 6.0" # Update RSpec gem to the latest
+gem "dartsass-rails"
+gem "bootstrap", "~> 5.3.3"
