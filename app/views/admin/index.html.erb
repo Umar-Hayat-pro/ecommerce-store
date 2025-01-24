@@ -1,0 +1,121 @@
+<div class="dashboard-title text-center mb-4">Admin Dashboard</div>
+<!-- Dashboard metrics cards -->
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2">
+  <div class="col">
+    <div class="card custom-card card-bg-1">
+      <div class="card-body text-center">
+        <i class="fas fa-boxes fa-sm mb-1"></i>
+        <h5 class="card-title fs-7">Total Products</h5>
+        <p class="card-text fs-7">150</p>
+        <div class="card-footer fs-7">View Products</div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card custom-card card-bg-2">
+      <div class="card-body text-center">
+        <i class="fas fa-users fa-sm mb-1"></i>
+        <h5 class="card-title fs-7">Total Users</h5>
+        <p class="card-text fs-7">300</p>
+        <div class="card-footer fs-7">View Users</div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card custom-card card-bg-3">
+      <div class="card-body text-center">
+        <i class="fas fa-shopping-cart fa-sm mb-1"></i>
+        <h5 class="card-title fs-7">Total Orders</h5>
+        <p class="card-text fs-7">85</p>
+        <div class="card-footer fs-7">View Orders</div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card custom-card card-bg-4">
+      <div class="card-body text-center">
+        <i class="fas fa-dollar-sign fa-sm mb-1"></i>
+        <h5 class="card-title fs-7">Total Revenue</h5>
+        <p class="card-text fs-7">$12,500</p>
+        <div class="card-footer fs-7">View Revenue</div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  /* Custom styles for the dashboard */
+  .custom-card {
+    border-radius: 6px; /* Smaller radius */
+    background-color: #f8f9fa;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 10px; /* Reduced padding */
+  }
+
+  .custom-card i {
+    font-size: 1rem; /* Even smaller icons */
+    color: white;
+    padding-bottom: 5px;
+  }
+
+  .custom-card .card-body {
+    padding: 10px; /* Reduced padding inside card body */
+  }
+
+  .custom-card .card-footer {
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .custom-card .card-footer:hover {
+    background-color: #e2e6ea;
+    color: #0056b3;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem; /* Smaller title size */
+    margin-bottom: 20px; /* Reduced margin */
+    color: #343a40;
+  }
+
+  /* Color scheme for the different cards */
+  .card-bg-1 {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .card-bg-2 {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .card-bg-3 {
+    background-color: #ffc107;
+    color: white;
+  }
+
+  .card-bg-4 {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .custom-card {
+  margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .dashboard-title {
+  font-size: 1.25rem; /* Even smaller title size for mobile */
+    }
+    .custom-card {
+  padding: 8px; /* Further reduce padding */
+    }
+    .custom-card .card-body {
+  padding: 8px; /* Further reduce padding */
+    }
+  }
+</style>

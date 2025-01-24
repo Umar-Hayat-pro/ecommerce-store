@@ -33,3 +33,17 @@
 .form-custom .btn-danger:hover {
   background-color: #b02a37;
 }
+
+#error_explanation {
+  padding: 1rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#error_explanation ul {
+  padding-left: 1.25rem; /* Indentation for list items */
+}
+
+#error_explanation li {
+  margin-bottom: 0.5rem; /* Spacing between error messages */
+}
