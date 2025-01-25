@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+<% content_for :title, "Products" %>
+<h1>Products</h1>
+<div class="admin_product-actions mb-4">
+  <%= link_to "New Product", new_admin_product_path, class: "btn btn-primary admin_product-btn" %>
+</div>
+<table class="table table-striped admin_product-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td>
+          <%= link_to "Show", admin_product_path(product), class: "btn btn-info btn-sm admin_product-btn" %>
+          <%= link_to "Edit", edit_admin_product_path(product), class: "btn btn-warning btn-sm admin_product-btn" %>
+          <%= link_to "Delete", admin_product_path(product), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm admin_product-btn" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
