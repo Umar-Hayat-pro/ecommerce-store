@@ -1,0 +1,27 @@
+<%= form_with(model: [:admin, admin_category], class: 'admin_category-form') do |form| %>
+  <% if admin_category.errors.any? %>
+    <div class="admin_category-errors alert alert-danger">
+      <h4><%= pluralize(admin_category.errors.count, "error") %> prohibited this category from being saved:</h4>
+      <ul>
+        <% admin_category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :name, class: 'admin_category-label' %>
+    <%= form.text_field :name, class: 'form-control admin_category-input' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :description, class: 'admin_category-label' %>
+    <%= form.textarea :description, class: 'form-control admin_category-textarea' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :status, class: 'admin_category-label' %>
+    <%= form.check_box :status, class: 'form-check-input admin_category-checkbox' %>
+  </div>
+  <div class="form-group">
+    <%= form.submit 'Save Category', class: 'btn btn-primary admin_category-btn-submit' %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<div id="<%= dom_id(category) %>" class="admin_category-details card">
+  <div class="card-body">
+    <h5 class="admin_category-title card-title">Category: <%= category.name %></h5>
+    <p><strong>Description:</strong> <%= category.description %></p>
+    <p><strong>Status:</strong> <%= category.status ? 'Active' : 'Inactive' %></p>
+  </div>
+</div>

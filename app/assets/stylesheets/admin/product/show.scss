@@ -1,0 +1,111 @@
+/* Admin Product Page Custom Styles */
+
+/* Admin Product Details Card */
+.admin-product-details {
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-product-details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Title */
+.admin-product-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+}
+
+/* Product Description */
+.admin-product-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Product Price */
+.admin-product-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #28a745; /* Fresh green for pricing */
+}
+
+/* Success Notice */
+.admin-product-notice {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #e0ffe0; /* Light green background for success notice */
+  border: 1px solid #28a745;
+  margin-bottom: 20px;
+}
+
+/* Action Buttons Container */
+.admin-product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Action Buttons */
+.admin-product-btn-action {
+  text-transform: uppercase;
+  padding: 10px 22px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.9rem;
+  border: none;
+}
+
+.admin-product-btn-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Specific Styles */
+.admin-product-btn-action.btn-warning {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.admin-product-btn-action.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.admin-product-btn-action.btn-danger {
+  background-color: #d9534f;
+  color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .admin-product-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-product-btn-action {
+    margin-bottom: 12px;
+  }
+
+  .admin-product-title {
+    font-size: 1.4rem; /* Slightly smaller title on small screens */
+  }
+
+  .admin-product-price {
+    font-size: 1.2rem; /* Smaller price on small screens */
+  }
+}

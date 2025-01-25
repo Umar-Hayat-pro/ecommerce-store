@@ -1,11 +1,11 @@
-<div id="<%= dom_id(product) %>" class="admin_product-details card mb-4">
+<div id="<%= dom_id(product) %>" class="admin-product-details card mb-4 shadow-sm">
   <div class="card-body">
-    <h5 class="card-title admin_product-title"><strong>Name:</strong> <%= product.name %></h5>
-    <p class="admin_product-description">
+    <h5 class="card-title admin-product-title"><strong>Name:</strong> <%= product.name %></h5>
+    <p class="admin-product-description">
       <strong>Description:</strong> <%= product.description %>
     </p>
-    <p class="admin_product-price">
-      <strong>Price:</strong> <%= product.price %>
+    <p class="admin-product-price">
+      <strong>Price:</strong> <%= number_to_currency(product.price) %> <!-- Formats the price as currency -->
     </p>
   </div>
 </div>

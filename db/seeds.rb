@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# In your seeds.rb file or database setup
+# Product.create(name: 'Product 1', description: 'Description for Product 1', image_url: 'https://placehold.co/150', category_id: 1)
+# Product.create(name: 'Product 2', description: 'Description for Product 2', image_url: 'https://placeholder.com/150', category_id: 1)
+# Product.create(name: 'Product 3', description: 'Description for Product 3', image_url: 'https://placeholder.com/150', category_id: 1)

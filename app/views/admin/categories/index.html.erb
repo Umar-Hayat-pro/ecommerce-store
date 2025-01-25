@@ -1,0 +1,32 @@
+<p class="admin_category-notice text-success"><%= notice %></p>
+<% content_for :title, "Categories" %>
+<div class="flex justify-content-between">
+  <h1 class="admin_category-heading">Categories</h1>
+  <div class="admin_category-links mt-3">
+    <%= link_to "New category", new_admin_category_path, class: 'btn btn-primary admin_category-btn-link' %>
+  </div>
+</div>
+<!-- Category Grid Layout -->
+<div class="admin_category-grid">
+  <% @admin_categories.each do |admin_category| %>
+    <div class="admin_category-card">
+      <%= link_to [:admin, admin_category], class: 'admin_category-card-link' do %>
+        <div class="admin_category-card-body">
+          <h5 class="admin_category-card-title"><%= admin_category.name %></h5>
+          <p class="admin_category-card-description"><%= admin_category.description %></p>
+          <p>
+            <% if admin_category.status %>
+              <span class="admin_category-status active">
+                <i class="fas fa-check-circle"></i> Active
+              </span>
+            <% else %>
+              <span class="admin_category-status inactive">
+                <i class="fas fa-times-circle"></i> Inactive
+              </span>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

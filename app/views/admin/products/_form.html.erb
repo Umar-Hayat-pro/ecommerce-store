@@ -22,6 +22,10 @@
     <%= form.text_field :price, class: "form-control admin_product-input" %>
   </div>
   <div class="admin_product-form-group">
+    <%= form.label :category_id, class: "admin_product-label" %>
+    <%= form.select :category_id, options_from_collection_for_select(Category.all, :id, :name), { include_blank: "Select a Category" }, { class: "form-control admin_product-input" } %>
+  </div>
+  <div class="admin_product-form-group">
     <%= form.submit "Save Product", class: "btn btn-primary admin_product-btn-submit" %>
   </div>
 <% end %>

@@ -2,10 +2,9 @@
 .admin_product-btn {
   padding: 10px 20px;
   font-size: 14px;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
 }
 
@@ -23,17 +22,14 @@
   background-color: #007bff;
   color: white;
 }
-
 .admin_product-btn-info {
   background-color: #17a2b8;
   color: white;
 }
-
 .admin_product-btn-warning {
   background-color: #ffc107;
   color: black;
 }
-
 .admin_product-btn-danger {
   background-color: #dc3545;
   color: white;
@@ -47,12 +43,11 @@
 .admin_product-table {
   width: 100%;
   border-collapse: collapse;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .admin_product-table th,
 .admin_product-table td {
-  padding: 15px;
+  padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
@@ -67,7 +62,7 @@
   text-transform: uppercase;
 }
 
-/* Form Container */
+/* Form Styling */
 .admin_product-errors {
   margin-bottom: 20px;
   padding: 15px;
@@ -76,20 +71,12 @@
   color: #721c24;
 }
 
-.admin_product-errors h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
 .admin_product-form-group {
   margin-bottom: 20px;
 }
-
 .admin_product-label {
   font-size: 16px;
   font-weight: bold;
-  display: block;
   margin-bottom: 8px;
 }
 
@@ -111,10 +98,9 @@
   padding: 12px 25px;
   font-size: 16px;
   width: 100%;
-  border-radius: 6px;
   background-color: #007bff;
   color: white;
-  border: none;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -127,7 +113,7 @@
   outline: none;
 }
 
-/* Product Display Card */
+/* Product Card Styling */
 .admin_product-details {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -138,7 +124,6 @@
 .admin_product-title {
   font-size: 20px;
   font-weight: bold;
-  color: #333;
   margin-bottom: 10px;
 }
 
@@ -146,11 +131,6 @@
 .admin_product-price {
   font-size: 16px;
   color: #555;
-}
-
-.admin_product-description strong,
-.admin_product-price strong {
-  font-weight: bold;
 }
 
 .admin_product-title,
@@ -178,7 +158,6 @@
 .admin_product-actions a,
 .admin_product-actions button {
   margin-right: 15px;
-  text-decoration: none;
 }
 
 /* Links and Buttons (like Edit, Delete) */
@@ -187,7 +166,7 @@
   font-size: 14px;
   border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .admin_product-btn-link:hover {
@@ -202,7 +181,6 @@
   background-color: #17a2b8;
   color: white;
 }
-
 .admin_product-btn-link.btn-secondary {
   background-color: #6c757d;
   color: white;
