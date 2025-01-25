@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get "admin" => "admin#index"
 
+  namespace :admin do
+    get "tenants" => "tenants#index"
+  end
+
 
 
   get "store" => "store#index"
