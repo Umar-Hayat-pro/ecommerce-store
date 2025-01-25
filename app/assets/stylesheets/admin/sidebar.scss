@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+.sidebar {
+  width: 140px;
+  background-color: #343a40;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  transition: width 0.3s ease;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #495057;
+  transform: translateX(10px);
+}
+
+.sidebar a i {
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.sidebar a:hover i {
+  transform: rotate(720deg);
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+}
