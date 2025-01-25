@@ -1,0 +1,7 @@
+<% content_for :title, "New product" %>
+<h1 class="admin_product-heading">New Product</h1>
+<%= render "form", admin_product: @admin_product %>
+<br>
+<div class="admin_product-actions">
+  <%= link_to "Back to products", admin_products_path, class: "btn btn-secondary btn-sm admin_product-btn-action" %>
+</div>
