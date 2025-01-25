@@ -1,2 +1,20 @@
 // Sassy
 @import "bootstrap";
+
+@import "admin/scss/variables";
+@import "admin/scss/buttons";
+@import "admin/scss/cards";
+@import "admin/scss/charts";
+@import "admin/scss/dropdowns";
+@import "admin/scss/error";
+@import "admin/scss/footer";
+@import "admin/scss/global";
+@import "admin/scss/login";
+@import "admin/scss/mixins";
+@import "admin/scss/navs";
+@import "admin/scss/utilities";
+@import "admin/css/sb-admin-2.min.scss";
+@import "admin/css/sb-admin-2.scss";
+@import "admin/scss/navs/global";
+@import "admin/scss/navs/sidebar";
+@import "admin/scss/navs/topbar";

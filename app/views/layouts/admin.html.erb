@@ -18,10 +18,11 @@
     <%= javascript_importmap_tags %>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   </head>
-  <body class="d-flex">
-    <%= render 'admin/shared/sidebar' %>
-    <div class="w-100 px-3">
+  <body id="page-top">
+    <div id="wrapper">
+      <%= render 'admin/shared/sidebar' %>
       <%= yield %>
     </div>
-  </body>
+  </div>
+</body>
 </html>
