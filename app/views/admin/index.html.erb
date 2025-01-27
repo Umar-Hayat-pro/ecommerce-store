@@ -1,20 +1,214 @@
-<div class="dashboard-container" data-controller="dashboard-fade-effect">
-  <div class="dashboard-grid">
-    <div class="card">
-      <h3>Users</h3>
-      <p class="metric-number">100</p>
+<% content_for :title, "Admin Dashboard" %>
+<!-- Dashboard Metrics Cards -->
+<div class="row mt-5">
+  <!-- Total Products Card -->
+  <div class="col-md-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title text-center">Total Products</h5>
+        <p class="card-text text-center display-4">150</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Products</h3>
-      <p class="metric-number">250</p>
+  </div>
+  <!-- Total Categories Card -->
+  <div class="col-md-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title text-center">Total Categories</h5>
+        <p class="card-text text-center display-4">25</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Categories</h3>
-      <p class="metric-number">12</p>
+  </div>
+  <!-- Total Users Card -->
+  <div class="col-md-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title text-center">Total Users</h5>
+        <p class="card-text text-center display-4">320</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Metric</h3>
-      <p class="metric-number">500</p>
+  </div>
+</div>
+<!-- Dummy Graph Section -->
+<!-- Placeholder for Graph Section -->
+<div class="row mt-5">
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Activity Graph</h5>
+        <div class="text-center">
+          <!-- Placeholder for a Graph -->
+          <div class="graph-placeholder" style="width: 100%; height: 400px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;">
+            <p class="text-center" style="padding-top: 180px; color: #aaa;">Graph Placeholder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Recent Products, Categories, and Users Tables -->
+<div class="row mt-5">
+  <!-- Recent Products Table -->
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Recently Added Products</h5>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="table-layout: auto;">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">Product Name</th>
+                <th scope="col" class="text-center">Category</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dummy Data for Products -->
+              <tr>
+                <td class="text-center">Product 1</td>
+                <td class="text-center">Category 1</td>
+                <td class="text-center">$10.99</td>
+                <td class="text-center">
+                  <%= link_to 'Edit', edit_admin_product_path(1), class: 'btn btn-warning btn-sm' %>
+                  <%= link_to 'Delete', admin_product_path(1), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Product 2</td>
+                <td class="text-center">Category 2</td>
+                <td class="text-center">$25.50</td>
+                <td class="text-center">
+                  <%= link_to 'Edit', edit_admin_product_path(2), class: 'btn btn-warning btn-sm' %>
+                  <%= link_to 'Delete', admin_product_path(2), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Dummy Pagination for Products -->
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <span class="page-link">Previous</span>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">1</span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- Recent Categories Table -->
+  <div class="col-12 mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Recently Added Categories</h5>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="table-layout: auto;">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">Category Name</th>
+                <th scope="col" class="text-center">Description</th>
+                <th scope="col" class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dummy Data for Categories -->
+              <tr>
+                <td class="text-center">Category 1</td>
+                <td class="text-center">Description for Category 1</td>
+                <td class="text-center">
+                  <%= link_to 'Edit', edit_admin_category_path(1), class: 'btn btn-warning btn-sm' %>
+                  <%= link_to 'Delete', admin_category_path(1), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">Category 2</td>
+                <td class="text-center">Description for Category 2</td>
+                <td class="text-center">
+                  <%= link_to 'Edit', edit_admin_category_path(2), class: 'btn btn-warning btn-sm' %>
+                  <%= link_to 'Delete', admin_category_path(2), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Dummy Pagination for Categories -->
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <span class="page-link">Previous</span>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">1</span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- Recent Users Table -->
+  <div class="col-12 mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Recently Added Users</h5>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="table-layout: auto;">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">User Name</th>
+                <th scope="col" class="text-center">Email</th>
+                <th scope="col" class="text-center">Role</th>
+                <th scope="col" class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dummy Data for Users -->
+              <tr>
+                <td class="text-center">User 1</td>
+                <td class="text-center">user1@example.com</td>
+                <td class="text-center">Admin</td>
+              </tr>
+              <tr>
+                <td class="text-center">User 2</td>
+                <td class="text-center">user2@example.com</td>
+                <td class="text-center">User</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Dummy Pagination for Users -->
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <span class="page-link">Previous</span>
+            </li>
+            <li class="page-item active">
+              <span class="page-link">1</span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
 </div>

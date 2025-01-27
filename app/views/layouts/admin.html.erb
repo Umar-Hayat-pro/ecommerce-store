@@ -18,10 +18,12 @@
     <%= javascript_importmap_tags %>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 m-0">
-    <%= render 'admin/shared/sidebar' %>
-    <div class="main-content">
+  <body class="bg-light smooth-scroll">
+    <header class="container">
+      <%= render 'admin/shared/navbar' %>
+    </header>
+    <main class="container">
       <%= yield %>
-    </div>
+    </main>
   </body>
 </html>
