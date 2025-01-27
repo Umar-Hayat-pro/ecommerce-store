@@ -1,52 +1,59 @@
-<p class="admin_category-notice text-success"><%= notice %></p>
-<!-- Category Details Card -->
-<div class="admin_category-details card shadow-sm mb-4">
-  <div class="card-body">
-    <div class="d-flex">
-      <!-- Category Details Column -->
-      <div class="admin_category-details-left flex-fill">
-        <h5 class="admin_category-title card-title text-primary font-weight-bold">Category: <%= @admin_category.name %></h5>
-        <p><strong>Description:</strong> <%= @admin_category.description %></p>
-        <p><strong>Status:</strong>
-          <% if @admin_category.status %>
-            <span class="admin_category-status active">
-              <i class="fas fa-check-circle"></i> Active
-            </span>
-          <% else %>
-            <span class="admin_category-status inactive">
-              <i class="fas fa-times-circle"></i> Inactive
-            </span>
-          <% end %>
-        </p>
-      </div>
-      <!-- Actions Buttons Column -->
-      <div class="admin_category-details-right ml-4">
-        <div class="admin_category-actions mt-3 d-flex flex-column">
-          <%= link_to "Edit this category", edit_admin_category_path(@admin_category), class: 'btn btn-info admin_category-btn-link mb-2' %>
-          <%= link_to "Back to categories", admin_categories_path, class: 'btn btn-secondary admin_category-btn-link mb-2' %>
-          <%= button_to "Destroy this category", [:admin, @admin_category], method: :delete, class: 'btn btn-danger admin_category-btn-link' %>
-        </div>
-      </div>
+<section class="category-details">
+  <div class="container">
+    <h2 class="section-title">Category Details</h2>
+    <div class="category-info">
+      <h3>Category: <span class="category-name">Electronics</span></h3>
+      <p><strong>Description:</strong> This category includes all electronic products, such as smartphones, laptops, and accessories.</p>
+      <p><strong>Status:</strong>
+        <span class="status active">
+          <i class="fas fa-check-circle"></i> Active
+        </span>
+      </p>
     </div>
+    <div class="actions">
+      <a href="#" class="btn btn-primary">Edit Category</a>
+      <a href="#" class="btn btn-secondary">Back to Categories</a>
+      <button class="btn btn-danger">Delete Category</button>
+    </div>
+    <h3 class="mt-4 section-title">Products in this Category</h3>
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Smartphone Model X</td>
+          <td>A high-end smartphone with a 6.5-inch display, 128GB storage, and a 48MP camera.</td>
+          <td>$599.99</td>
+          <td>
+            <a href="#" class="btn btn-info">Edit</a>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Laptop Model Y</td>
+          <td>A lightweight laptop with an Intel i7 processor, 16GB RAM, and 512GB SSD storage.</td>
+          <td>$1099.99</td>
+          <td>
+            <a href="#" class="btn btn-info">Edit</a>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Wireless Headphones Z</td>
+          <td>Noise-canceling wireless headphones with 30 hours of battery life.</td>
+          <td>$199.99</td>
+          <td>
+            <a href="#" class="btn btn-info">Edit</a>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
-<h3 class="mt-4">Products in this Category</h3>
-<% if @admin_category.products.any? %>
-  <!-- Display products for this category -->
-  <div class="admin_category-products">
-    <% @admin_category.products.each do |product| %>
-      <div class="admin_category-product-card card mb-3">
-        <%= link_to admin_product_path(product), class: 'admin_category-product-link' do %>
-          <div class="card-body">
-            <img src="https://placehold.co/150" alt="<%= product.name %>" class="admin_category-product-image">
-            <h5 class="admin_category-product-title card-title"><%= product.name %></h5>
-            <p class="admin_category-product-description"><%= product.description %></p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-<% else %>
-  <!-- No products available -->
-  <p class="admin_category-no-products text-danger">No products in this category yet.</p>
-<% end %>
+</section>
