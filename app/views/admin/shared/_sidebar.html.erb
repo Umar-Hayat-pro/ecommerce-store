@@ -1,18 +1,12 @@
-<div class="sidebar">
-  <h4 class="text-center py-3 border-bottom">Admin</h4>
-  <%= link_to admin_path do %>
-    <i class="fas fa-tachometer-alt"></i> Dashboard
-  <% end %>
-  <%= link_to admin_categories_path do %>
-    <i class="fas fa-list"></i> Categories
-  <% end %>
-  <%= link_to admin_products_path do %>
-    <i class="fas fa-box"></i> Products
-  <% end %>
-  <a href="#">
-    <i class="fas fa-shopping-cart"></i> Orders
-  </a>
-  <a href="#">
-    <i class="fas fa-cogs"></i> Settings
-  </a>
-</div>
+<aside class="sidebar">
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="/products"><i class="fas fa-box"></i> Products</a></li>
+      <li><a href="/orders"><i class="fas fa-clipboard-list"></i> Orders</a></li>
+      <li><a href="/categories"><i class="fas fa-tags"></i> Categories</a></li>
+      <li><a href="/users"><i class="fas fa-users"></i> Users</a></li>
+      <li><a href="/settings"><i class="fas fa-cogs"></i> Settings</a></li>
+    </ul>
+  </nav>
+</aside>
