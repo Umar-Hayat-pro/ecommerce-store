@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap; // Allows items to wrap on smaller screens
+}
+
+.card {
+  position: relative; // Needed for placing the dots
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px; // Adjusted for square card
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden; // Ensures dots don't overlap the card area
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.card span {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+// Dot container around the card
+.dot-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; // Prevent dots from blocking clicks
+}
+
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #007bff;
+  border-radius: 50%;
+  animation: orbit 1s linear infinite;
+
+  &:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 0s;
+  }
+
+  &:nth-child(2) {
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    animation-delay: 0.4s;
+  }
+}
+
+// Animation to make dots orbit around the card
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+// Mobile screen adjustments
+@media (max-width: 480px) {
+  .card-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .card {
+    width: 150px; // Smaller card for small screens
+    height: 150px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card span {
+    font-size: 1.2rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+// Tablet screen adjustments
+@media (max-width: 768px) {
+  .card-container {
+    gap: 10px;
+  }
+
+  .card {
+    width: 362px; // Slightly smaller card for tablet
+    height: 180px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card span {
+    font-size: 1.4rem;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+// Large screen adjustments
+@media (min-width: 1024px) {
+  .card-container {
+    gap: 30px; // Larger gap on larger screens
+  }
+
+  .card {
+    width: 220px; // Larger card for larger screens
+    height: 220px;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card span {
+    font-size: 1.7rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
