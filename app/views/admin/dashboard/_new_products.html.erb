@@ -1,0 +1,23 @@
+<div class="mt-5 mb-5 ">
+  <h3 class="text-center">Recently Added Products</h3>
+
+  <div class="row mt-3 gx-2 gy-3">
+    <% @products.each do |product| %>
+      <div class="col-md-3">
+      <%= link_to admin_product_path(product), class: "text-decoration-none" do %>
+        <div class="bg-light p-2 rounded border product-card-shadow">
+          <div class="d-flex">
+            <img src="https://placehold.co/100" alt="Product Image" class="img-fluid rounded product-card-image">
+            <div class="d-flex flex-column justify-content-center ms-2 product-card-details" >
+              <h5 class="fw-bold mb-1"><%= product.name %></h5>
+              <p class="mb-0 text-muted">Category: <small><%= product.category.name %></small></p>
+              <p class="mb-0 text-muted">Price: $<%= product.price %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,20 @@
+<div class="mt-5 mb-5" >
+    <h3 class="text-center">Tenants</h3>
+</div>
+<div class="user-cards-container mb-5">
+  <% @users.each do |user| %>
+    <div class="user-card">
+      <div class="user-image">
+        <% if user.logo.attached? %>
+          <%= image_tag user.logo, alt: "#{user.first_name}'s Profile Image", class: "profile-image" %>
+        <% else %>
+          <img src="https://placehold.co/100" alt="Placeholder" class="profile-image">
+        <% end %>
+      </div>
+      <div class="user-info">
+        <h4 class="user-name"><%= user.first_name %> <%= user.last_name %></h4>
+        <p class="user-email"><%= user.email %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+<div class="profile-page">
+  <div class="profile-header">
+    <% if @user.logo.attached? %>
+      <%= image_tag @user.logo, class: "profile-avatar" %>
+    <% else %>
+      <img src="https://placehold.co/150" alt="User Avatar" class="profile-avatar">
+    <% end %>
+    <div class="profile-info">
+      <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+      <p><%= @user.email %></p>
+      <p class="location">Address: <%= @user.address %></p>
+    </div>
+  </div>
+
+  <div class="profile-actions">
+    <%= link_to 'Edit Profile', edit_user_registration_path, class:"profile-link" %>
+    <%= link_to 'Shop', store_path, class:"profile-link" %>
+  </div>
+
+  <div class="profile-details">
+    <h3>Profile Details</h3>
+    <ul>
+      <li><strong>Joined:</strong> <%= @user.created_at.strftime('%B %Y') rescue 'N/A' %></li>
+      <li><strong>Orders:</strong> <%#= @user.orders.count || 'N/A' %> Work in Progress</li>
+      <li><strong>Wishlist:</strong> <%#= @user.wishlist.count || 'N/A' %>Work in Progress</li>
+    </ul>
+  </div>
+</div>
