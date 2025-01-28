@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :products
     get "tenants" => "tenants#index"
   end
+  resources :categories, only: [:show]
 
 
   get "user/profile" => "profile#index"
