@@ -1,59 +1,38 @@
-<section class="category-details">
-  <div class="container">
-    <h2 class="section-title">Category Details</h2>
+<div class="category-show">
+  <div class="category-header">
+    <!-- Category Image -->
+    <div class="category-image">
+      <% if @admin_category.image.attached? %>
+        <%= image_tag @admin_category.image, class: 'category-img'%>
+      <% else %>
+        <img src="https://placehold.co/100" alt="Placeholder" class="profile-image">
+        <% end %>
+    </div>
+
+    <!-- Category Name and Description -->
     <div class="category-info">
-      <h3>Category: <span class="category-name">Electronics</span></h3>
-      <p><strong>Description:</strong> This category includes all electronic products, such as smartphones, laptops, and accessories.</p>
-      <p><strong>Status:</strong>
-        <span class="status active">
-          <i class="fas fa-check-circle"></i> Active
-        </span>
-      </p>
+      <h2 class="category-title"><%= @admin_category.name %></h2>
+      <p class="category-description"><%= @admin_category.description %></p>
     </div>
-    <div class="actions">
-      <a href="#" class="btn btn-primary">Edit Category</a>
-      <a href="#" class="btn btn-secondary">Back to Categories</a>
-      <button class="btn btn-danger">Delete Category</button>
-    </div>
-    <h3 class="mt-4 section-title">Products in this Category</h3>
-    <table class="products-table">
-      <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Description</th>
-          <th>Price</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Smartphone Model X</td>
-          <td>A high-end smartphone with a 6.5-inch display, 128GB storage, and a 48MP camera.</td>
-          <td>$599.99</td>
-          <td>
-            <a href="#" class="btn btn-info">Edit</a>
-            <button class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Laptop Model Y</td>
-          <td>A lightweight laptop with an Intel i7 processor, 16GB RAM, and 512GB SSD storage.</td>
-          <td>$1099.99</td>
-          <td>
-            <a href="#" class="btn btn-info">Edit</a>
-            <button class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Wireless Headphones Z</td>
-          <td>Noise-canceling wireless headphones with 30 hours of battery life.</td>
-          <td>$199.99</td>
-          <td>
-            <a href="#" class="btn btn-info">Edit</a>
-            <button class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
-</section>
+
+  <!-- Products in the Category -->
+  <div class="products">
+    <h3>Products in this Category</h3>
+    <div class="row">
+      <% @admin_category.products.each do |product| %>
+        <div class="col-md-3 product-card">
+          <div class="card">
+            <div class="card-img">
+              <%#= image_tag product.image, alt: product.name, class: 'product-img' if product.image.attached? %>
+            </div>
+            <div class="card-body">
+              <h4 class="product-name"><%= product.name %></h4>
+              <p class="product-price"><%= number_to_currency(product.price) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

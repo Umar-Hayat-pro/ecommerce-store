@@ -4,35 +4,24 @@
     <p>Click on a category to view products.</p>
   </div>
 </div>
+
 <div class="row justify-content-center g-4 mb-5">
+  <% @categories.each do |category| %>
   <div class="col-md-4">
-    <a href="/category/1" class="text-decoration-none smooth-scroll">
+    
+    <a href="/category/<%= category.id %>" class="text-decoration-none smooth-scroll">
       <div class="card text-center">
-        <%= image_tag '300x200.png', class:"card-img-top", alt:"Category 1" %>
+        <% if category.image.attached? %>
+          <%= image_tag category.image, class:"card-img-top", alt:"#{category.name}" %>
+        <% else %>
+          <img src="https://placehold.co/100" alt="Placeholder" class="card-img-top">
+        <% end %>
         <div class="card-body">
-          <h5 class="card-title">Category 1</h5>
+          <h5 class="card-title"><%= category.name %></h5>
         </div>
       </div>
     </a>
-  </div>
-  <div class="col-md-4">
-    <a href="/category/2" class="text-decoration-none smooth-scroll">
-      <div class="card text-center">
-        <%= image_tag '300x200.png', class:"card-img-top", alt:"Category 2" %>
-        <div class="card-body">
-          <h5 class="card-title">Category 2</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4">
-    <a href="/category/3" class="text-decoration-none smooth-scroll">
-      <div class="card text-center">
-        <%= image_tag '300x200.png', class:"card-img-top", alt:"Category 3" %>
-        <div class="card-body">
-          <h5 class="card-title">Category 3</h5>
-        </div>
-      </div>
-    </a>
-  </div>
+    </div>
+  <% end %>
 </div>
+     
