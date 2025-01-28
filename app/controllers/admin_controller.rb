@@ -3,5 +3,6 @@ class AdminController < ApplicationController
   layout "admin"
   def index
     @products = Product.last(4)
+    @users    = User.last(4)
   end
 end

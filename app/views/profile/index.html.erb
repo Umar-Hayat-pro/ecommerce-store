@@ -1,6 +1,10 @@
 <div class="profile-page">
   <div class="profile-header">
-    <img src="https://placehold.co/150" alt="User Avatar" class="profile-avatar">
+    <% if @user.logo.attached? %>
+      <%= image_tag @user.logo, class: "profile-avatar" %>
+    <% else %>
+      <img src="https://placehold.co/150" alt="User Avatar" class="profile-avatar">
+    <% end %>
     <div class="profile-info">
       <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
       <p><%= @user.email %></p>

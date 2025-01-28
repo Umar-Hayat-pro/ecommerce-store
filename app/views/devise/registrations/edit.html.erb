@@ -46,6 +46,11 @@
         <%= f.text_field :address, class: "form-label" %>
     </div>
 
+    <div>
+        <%= f.label :logo, class: "form-label" %>
+        <%= f.file_field :logo, class: "form-label" %>
+    </div>
+
     <!-- Submit Button -->
     <div class="form-actions">
       <%= f.submit "Update", class: "form-button" %>
