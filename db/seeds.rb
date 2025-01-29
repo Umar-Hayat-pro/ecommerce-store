@@ -14,6 +14,4 @@
 # Product.create(name: 'Product 3', description: 'Description for Product 3', image_url: 'https://placeholder.com/150', category_id: 1)
 #
 
-User.create(first_name: 'Admin', last_name: 'Admin', email: 'admin@admin.com', password: 'password', password_confirmation: 'password')
-User.create(first_name: 'Tenant', last_name: 'Tenant', email: 'tenant@tenant.com', password: 'password', password_confirmation: 'password')
-User.create(first_name: 'Tenant2', last_name: 'Tenant2', email: 'tenant2@tenant.com', password: 'password', password_confirmation: 'password')
+User.create(first_name: "Admin", last_name: "User", email: "admin@ecommerce.com", password: "1234567890", password_confirmation: "1234567890", role: "admin")
