@@ -5,4 +5,6 @@ class AdminController < ApplicationController
     @products = Product.last(4)
     @users    = User.last(4)
   end
+
+
 end

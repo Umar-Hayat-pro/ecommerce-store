@@ -1,5 +1,6 @@
 class Admin::ProductsController < AdminController
   before_action :set_admin_product, only: %i[ show edit update destroy ]
+  before_action :check_admin
 
   # GET /admin/products or /admin/products.json
   def index
@@ -58,13 +59,19 @@ class Admin::ProductsController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+  def check_admin
+    redirect_to root_path, alert:"Access denied Nigga!" unless current_user.admin?
+
+  end
+
     def set_admin_product
       @admin_product = Product.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through.
     def admin_product_params
       params.expect(product: [ :name, :description, :price, :category_id, :image ])
     end
+    
 end
+

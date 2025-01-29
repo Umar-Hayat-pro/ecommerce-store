@@ -1,5 +1,6 @@
 class Admin::CategoriesController < AdminController
   before_action :set_admin_category, only: %i[ show edit update destroy ]
+  before_action :check_admin
 
   # GET /admin/categories or /admin/categories.json
   def index
@@ -58,13 +59,18 @@ class Admin::CategoriesController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_category
-      @admin_category = Category.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def admin_category_params
-      params.expect(category: [ :name, :description, :status, :image ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_category
+    @admin_category = Category.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def admin_category_params
+    params.expect(category: [:name, :description, :status, :image])
+  end
+
+  def check_admin
+    redirect_to root_path, alert: "Access denied Chigga~" unless current_user.admin?
+  end
 end
