@@ -29,5 +29,6 @@
     <p class="product-description"><%= @product.description %></p>
     <!-- Back to Shop Button -->
     <%= link_to 'Back to Shop', store_path, class: "btn btn-primary mt-3" %>
+    <%= button_to 'Order Now', orders_path(product_id: @product.id), method: :post, class: 'order-button' %>
   </div>
 </div>

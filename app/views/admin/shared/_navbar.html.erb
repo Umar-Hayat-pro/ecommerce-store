@@ -22,12 +22,15 @@
             Category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%= link_to 'Categories', admin_categories_path, class: 'dropdown-item' %></li>
-            <li><%= link_to 'New Category', new_admin_category_path, class: 'dropdown-item' %></li>
+            <li><%= link_to 'Categories', admin_categories_path, class: "dropdown-item " %></li>
+            <li><%= link_to 'New Category', new_admin_category_path, class: "dropdown-item" %></li>
           </ul>
         </li>
         <li class="nav-item">
-          <%= link_to 'Tenants', admin_tenants_path, class: "nav-link" %>
+          <%= link_to 'Tenants', admin_tenants_path, class: "nav-link #{'active' if current_page?(admin_tenants_path)}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Orders', admin_orders_path, class: "nav-link #{'active' if current_page?(admin_orders_path)}" %>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -42,10 +45,10 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to 'Sign In', new_user_session_path, class: "nav-link" %>
+            <%= link_to 'Sign In', new_user_session_path, class: "nav-link #{'active' if current_page?(new_user_session_path)}" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link #{'active' if current_page?(new_user_registration_path)}" %>
           </li>
         <% end %>
       </ul>
