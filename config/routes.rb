@@ -21,10 +21,10 @@ Rails.application.routes.draw do
 
 
   # Static pages
-  get "user/profile" => "profile#index"
   get "store" => "store#index"
-  get "about" => "about#index"
-  get "contact" => "contact#index"
+  get "user/profile" => "home#profile"
+  get "about" => "home#about"
+  get "contact" => "home#contact"
 
   # Home page
   root "home#index"
