@@ -4,12 +4,12 @@
 @import "profile/index";
 @import "devise/register_edit";
 @import "admin/category";
-
-
+@import "admin/order_grid";
+@import "admin/order_table";
 .icon {
-    width: 24px;
-    height: 24px;
-    fill: #333;
-    display: inline-block;
-    vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  fill: #333;
+  display: inline-block;
+  vertical-align: middle;
 }

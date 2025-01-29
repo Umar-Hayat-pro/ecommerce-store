@@ -17,6 +17,6 @@
   <div class="col-md-2 d-flex flex-column justify-content-between bg-light p-3 rounded align-items-center metric-card">
     <%= image_tag asset_path('icon/order.svg'), class: 'icon'%>
     <p class="text-muted text-center" style="margin-top: 3px;" >Orders: <%= Order.count %></p>
-    <%= link_to "View Orders", admin_path, class: "btn btn-primary" %>
+    <%= link_to "View Orders", admin_orders_path, class: "btn btn-primary" %>
   </div>
 </div>
