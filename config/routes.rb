@@ -12,18 +12,13 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :products
-    resources :orders, only: [ :index, :update ]
     get "tenants" => "tenants#index"
   end
 
   # Client-side categories and products
   resources :categories, only: [ :show ]
-  resources :products, only: [ :show ] do
-    resources :orders, only: [ :new, :create ]
-  end
+  resources :products, only: [ :show ]
 
-  # Orders for users
-  resources :orders, only: [ :index, :show ]
 
   # Static pages
   get "user/profile" => "profile#index"
