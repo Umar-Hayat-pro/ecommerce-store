@@ -1,15 +1,45 @@
-<div class="container-fluid py-5">
-  <!-- Hero Section -->
-  <div class="row bg-primary text-white text-center py-5 mb-5">
-    <div class="col">
-      <h1>Welcome to Our Store</h1>
-      <p>Discover the best products tailored for your needs!</p>
+<div class="row mt-5 h-100" style="min-height: 100vh;">
+  <div class="col-md-3">
+    <aside class="bg-light p-4 rounded shadow-sm">
+      <h4 class="mb-4 border-bottom pb-2">Categories</h4>
+      <div class="category-list">
+        <%= render 'store/category' %>
+      </div>
+    </aside>
+  </div>
+  <div class="col-md-9 ">
+    <div class="row g-4">
+      <%= render 'store/product' %>
     </div>
   </div>
-  <!-- Categories Section -->
-  <%= render 'store/categories' %>
-  <!-- End of Categories Section -->
-  <!-- Featured Products Section -->
-  <%= render 'store/featured_product' %>
-  <!-- End of Featured Products Section -->
 </div>
+<style>
+  .hover-highlight:hover {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+  }
+
+  .product-card {
+    transition: transform 0.2s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-image {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .price-tag {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #198754;
+  }
+
+  .category-list {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+</style>

@@ -3,22 +3,29 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     registrations: "users/registrations"
   }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Health check endpoint
   get "up" => "rails/health#show", as: :rails_health_check
 
-
+  # Admin namespace
   get "admin" => "admin#index"
-
   namespace :admin do
     resources :categories
     resources :products
     get "tenants" => "tenants#index"
   end
 
+  # Client-side categories and products
+  resources :categories, only: [ :show ]
+  resources :products, only: [ :show ]
 
-  get "user/profile" => "profile#index"
+
+  # Static pages
   get "store" => "store#index"
-  get "about" => "about#index"
-  get "contact" => "contact#index"
+  get "user/profile" => "home#profile"
+  get "about" => "home#about"
+  get "contact" => "home#contact"
+
+  # Home page
   root "home#index"
 end

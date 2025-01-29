@@ -1,25 +1,22 @@
-<div class="row mt-3 gx-3">
-  <div class="col-md-3 d-flex flex-column justify-content-between bg-light p-3 rounded metric-card">
-    <h3 class="text-dark">Users</h3>
-    <p class="text-muted">Total Users: <%= User.count %></p>
+<div class="row mt-3 gx-3 d-flex justify-content-between align-items-center">
+  <div class="col-md-2 d-flex flex-column justify-content-between bg-light p-3 rounded align-items-center metric-card">
+    <%= image_tag asset_path('icon/user.svg'), class: 'icon'%>
+    <p class="text-muted text-center" style="margin-top: 3px;" >Users: <%= User.count %></p>
     <%= link_to "View Users", admin_tenants_path, class: "btn btn-primary" %>
   </div>
-  
-  <div class="col-md-3 d-flex flex-column justify-content-between bg-light p-3 rounded metric-card">
-    <h3 class="text-dark">Products</h3>
-    <p class="text-muted">Total Products: <%= Product.count %></p>
+  <div class="col-md-2 d-flex flex-column justify-content-between bg-light p-3 rounded align-items-center metric-card">
+    <%= image_tag asset_path('icon/products.svg'), class: 'icon'%>
+    <p class="text-muted text-center" style="margin-top: 3px;" >Products: <%= Product.count %></p>
     <%= link_to "View Products", admin_products_path, class: "btn btn-primary" %>
   </div>
-  
-  <div class="col-md-3 d-flex flex-column justify-content-between bg-light p-3 rounded metric-card" >
-    <h3 class="text-dark">Category</h3>
-    <p class="text-muted">Total Categories: <%= Category.count %></p>
+  <div class="col-md-2 d-flex flex-column justify-content-between bg-light p-3 rounded align-items-center metric-card" >
+    <%= image_tag asset_path('icon/categories.svg'), class: 'icon'%>
+    <p class="text-muted text-center" style="margin-top: 3px;" >Categories: <%= Category.count %></p>
     <%= link_to "View Categories", admin_categories_path, class: "btn btn-primary" %>
   </div>
-  
-  <div class="col-md-3 d-flex flex-column justify-content-between bg-light p-3 rounded metric-card">
-    <h3 class="text-dark">Orders</h3>
-    <p class="text-muted">Total Orders: Work in progress <%#= Order.count %></p>
+  <div class="col-md-2 d-flex flex-column justify-content-between bg-light p-3 rounded align-items-center metric-card">
+    <%= image_tag asset_path('icon/order.svg'), class: 'icon'%>
+    <p class="text-muted text-center" style="margin-top: 3px;" >Orders: <%= Order.count %></p>
     <%= link_to "View Orders", admin_path, class: "btn btn-primary" %>
   </div>
 </div>

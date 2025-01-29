@@ -1,0 +1,33 @@
+<style>
+  .product-details {
+    max-width: 600px;
+    margin: auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .product-title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .product-price {
+    font-size: 22px;
+    color: #28a745;
+  }
+</style>
+<div class="container">
+  <div class="product-details">
+    <h1 class="product-title"> <%= @product.name %> </h1>
+    <%= image_tag @product.image, alt: "#{@product.name}", class: "product-image" if @product.image.attached? %>
+    <p class="product-price">$<%= @product.price %></p>
+    <p class="product-description"><%= @product.description %></p>
+    <!-- Back to Shop Button -->
+    <%= link_to 'Back to Shop', store_path, class: "btn btn-primary mt-3" %>
+  </div>
+</div>
