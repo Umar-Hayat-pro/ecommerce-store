@@ -1,0 +1,15 @@
+<% @products.each do |p| %>
+  <div class="col-md-3">
+    <div class="card product-card h-100 border-0 shadow-sm">
+      <%= image_tag p.image, class: "card-img-top product-image" if p.image.attached? %>
+      <div class="card-body">
+        <h5 class="card-title text-truncate"><%= p.name %></h5>
+        <p class="card-text text-muted small"><%= p.category.name %></p>
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="price-tag">$<%= number_with_precision(p.price, precision: 2) %></span>
+          <%= link_to 'Show', product_path(p), class: "btn btn-primary btn-sm" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

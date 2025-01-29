@@ -1,0 +1,6 @@
+<% @categories.each do |category| %>
+  <%= link_to category_path(category), class: "d-block text-decoration-none py-2 text-dark hover-highlight" do %>
+    <%= category.name %>
+    <span class="badge bg-secondary float-end"><%= category.products.count %></span>
+  <% end %>
+<% end %>
